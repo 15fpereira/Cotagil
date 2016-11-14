@@ -1,10 +1,10 @@
-# Ecommerce Test
+# Sistema Cotágil
 
 This Project have:
 -----------
 
 - **Technologies**
-  - Laravel Express 5.3
+  - Laravel 5.3
   - PHP 5.6
   - MySQL
   - AngularJs
