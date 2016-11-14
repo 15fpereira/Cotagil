@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/ecommerce-master/app/Pedidos.php</file>
+            <file>file:/C:/xampp/htdocs/ecommerce-master/database/migrations/2016_08_29_023141_create_produtos_table.php</file>
+            <file>file:/C:/xampp/htdocs/ecommerce-master/app/Http/Controllers/HomeController.php</file>
+            <file>file:/C:/xampp/htdocs/ecommerce-master/database/migrations/2016_08_29_023159_create_categorias_table.php</file>
+            <file>file:/C:/xampp/htdocs/ecommerce-master/app/Http/Controllers/ProdutosController.php</file>
+            <file>file:/C:/xampp/htdocs/ecommerce-master/resources/views/produtos/listagem.blade.php</file>
+        </group>
+    </open-files>
+</project-private>
