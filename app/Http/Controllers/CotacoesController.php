@@ -8,7 +8,7 @@ use cotagil\User;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Auth;
-use cotagil\Http\Requests\RequestPreco;
+
 use Illuminate\Support\Facades\App;
 
 use Illuminate\Support\Facades\Input;
@@ -37,22 +37,22 @@ class CotacoesController extends Controller
 
     }
 
-    public function create()
+    public function create($idcotacao)
     {
-
-        return view('cotacoes.create');
+        $cotacao = Cotacao::find($idcotacao);
+        return view('cotacoes.create',['cotacao' => $cotacao]);
     }
 
-    public function anyStore(Request $request, $id)
+    public function store(Request $request, $idcotacao)
     {
-        //dd($request->toArray());
-        dd($id);
-        //$idcotacao = 1;
+                //$idcotacao = 1;
        $user = User::find(\Auth::user()->id);
-           $user->cotacoes()->attach($request->idcotacao, ['preco' => $request->preco]);
-        // User::find(\Auth::user()->id)->cotacoes()->save($idcotacao, ['preco'=>$request->preco]);
-        //dd($cotar = Cotacao::find($idcotacao));
-        //$cotar->usuarios()->attach(\Auth::user()->id, ['preco'=>$request]);
+        $user->cotacoes()->attach($idcotacao, [
+            'preco' => $request->preco,
+            'marca' => $request->marca,
+            'prazo' => $request->prazo
+        ]);
+
         return redirect()->back();
 
     }

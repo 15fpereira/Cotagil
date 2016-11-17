@@ -10,8 +10,12 @@ class Categorias extends Model
 	{
 		return $this
 			->selectRaw('DISTINCT categorias.id,categorias.nome')
-			->join('produtos', 'categorias.id', '=', 'id_categoria')
+			->join('produtos', 'categorias.id', '=', 'categoria_id')
 			->orderBy('categorias.id', 'ASC')
 			->get();
 	}
+	public function produtos()
+    {
+        return $this->hasMany('App\Produtos');
+    }
 }

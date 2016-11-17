@@ -15,7 +15,8 @@ class CreatePedidosTable extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
             //$table->integer('endereco_id');
             $table->integer('qtd_itens');
             //$table->float('valor_total', 10, 2);

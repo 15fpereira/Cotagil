@@ -27,13 +27,14 @@ class ProdutosController extends Controller
         } else if (null !== $catId) {
             $produtos = 
             ProdutosModel::where(
-                'id_categoria', $catId
+                'categoria_id', $catId
             )
             ->paginate(12);
         } else {
             $produtos = ProdutosModel::paginate(12);
         }
 
+        //inner join que esta na model Categorias
         $categorias = (new Categorias)->getCategorias();
         return view('produtos.listagem', ['produtos' => $produtos, 'categorias' => $categorias, 'search' => $search]);
     }

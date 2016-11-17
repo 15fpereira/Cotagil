@@ -81,31 +81,31 @@ class HomeController extends Controller
 
     public function cotacao(Request $request, $idPedido)
     {
-        $cotacoes = Cotacao::where('user_id', $idPedido)->paginate(4);
+        $cotacoes = Cotacao::where('pedido_id', $idPedido)->paginate(4);
 
-        return view('pedidos.cotacoes',['cotacoes'=>$cotacoes]);
+        return view('pedidos.pedido-cotacao',['cotacoes'=>$cotacoes]);
     }
-    //public function produtoCotado(Request $request, $idcotacao)
-    //{
-      //  $cotado = Cotacao::find($idcotacao);
-
-        //return view('pedidos.cotado',['cotacao'=>$cotado]);
-    //}
+    public function produtoCotado(Request $request, $idcotacao)
+    {
+       $cotado = $idcotacao;
+        dd($cotado);
+       // dd($user = User::find(\Auth::user()->id)->cotacoes());
+        //$user = User::find(\Auth::user()->id)->cotacoes();
+        $cotado = Cotacao::find($id = $idcotacao);
+        return view('cotacoes.',['cotado'=>$cotado]);
+    }
 
     /**
      * LIsta as cotação do usuário logado
      * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function minhaCotacao(Request $request)
+    public function minhaCotacao()
     {
         $user = User::find(\Auth::user()->id);
+
         return view('cotacoes.minha-cotacao',['user'=>$user]);
     }
 
-    public function produtoCotado()
-    {
-
-    }
 
 }

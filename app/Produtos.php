@@ -15,8 +15,13 @@ class Produtos extends Model
         return 'produtos';
     }
 
-    public function enderecos()
+    public function categoria()
     {
-    	$this->hasMany('cotagil\Enderecos');
+    	$this->belongsTo('cotagil\Categorias');
+    }
+
+    public function cotacao()
+    {
+    	$this->hasMany('cotagil\Cotacao');
     }
 }

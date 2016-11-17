@@ -1,3 +1,4 @@
+
 @extends('partials.home_fornecedor')
 @section('content')
     <div class="container">
@@ -12,21 +13,18 @@
                             <th>Nome do produto</th>
                             <th>Descrição do produto</th>
                             <th>Valor R$</th>
-                            <th>Marca</th>
                             <th>Prazo(s)</th>
-                            <th>Data/Cotação</th>
                             <th>Ações</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($user->cotacoes as $cotacoe)
+                        @foreach($cotado->users as $user)
+                            @if($cotado == $cotacoe->pivot->cotacao_id)
                             <tr class="odd gradeX">
-                                <td>{{$cotacoe->produto->nome}}</td>
-                                <td>{{$cotacoe->produto->descricao}}</td>
-                                <td>{{$cotacoe->pivot->preco}} R$</td>
-                                <td>{{$cotacoe->pivot->marca}}</td>
-                                <td>{{$cotacoe->pivot->prazo}}</td>
-                                <td>{{$cotacoe->pivot->created_at}}</td>
+                                <td>{{$user->produto->nome}}</td>
+                                <td>{{$user->produto->descricao}}</td>
+                                <td>{{$user->pivot->preco}} R$</td>
+                                <td>{{$user->pivot->created_at}}</td>
                                 <td class="center">
                                     <div class="button-side">
                                         <a href="#" class="btn-system border-btn btn-large"><i class="fa fa-trash" aria-hidden="true"></i> Recusar</a>
@@ -34,6 +32,7 @@
                                     </div>
                                 </td>
                             </tr>
+                            @endif
                         @endforeach
                         </tbody>
                     </table>

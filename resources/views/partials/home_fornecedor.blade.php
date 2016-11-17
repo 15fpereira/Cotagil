@@ -19,6 +19,7 @@
     <meta name="author" content="iThemesLab">
 
     @include('partials.css-style')
+    @include('partials.modals.style-modal')
 
     <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -89,7 +90,7 @@
                         </li>
                         <li> <a href="#">Serviço</a>
                             <ul class="dropdown">
-                                <li><a href="{{url('pedido/cotacao')}}">Cotar produto</a>
+                                <li><a href="{{url('/pedido/cotacao')}}">Cotar produto</a>
                                 </li>
                                 <li><a href="{{url('/minha-cotacao')}}">Minhas cotações</a>
                             </ul>
@@ -160,8 +161,9 @@
         <!-- End Header ( Logo & Naviagtion ) -->
     </header>
     <!-- End Header -->
-
-@yield('content')
+    <div class="modal-body">
+        @yield('content')
+    </div>
     <div class="hr5" style="margin-top:25px; margin-bottom:55px;"></div>
     <!-- Start Footer -->
     <footer>

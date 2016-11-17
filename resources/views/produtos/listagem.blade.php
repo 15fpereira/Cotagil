@@ -24,7 +24,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="search">
-                        <form method="get" action="{{ url('/produtos/listagem') }}">
+                        <form method="
+" action="{{ url('/produtos/listagem') }}">
                             <input type="text" name="search" class="form-control input-sm" id="search-input" maxlength="64" placeholder="Busca" value="{{ $search }}" /><br />
                             <input type="submit" value="buscar" class="btn btn-primary top" />
                         </form>

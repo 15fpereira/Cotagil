@@ -15,8 +15,10 @@ class CreateCotacaosTable extends Migration
     {
         Schema::create('cotacaos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('pedido_id');
-            $table->integer('produto_id');
+            $table->integer('pedido_id')->unsigned();
+            $table->foreign('pedido_id')->references('id')->on('pedidos')->onUpdate('cascade');
+            $table->integer('produto_id')->unsigned();
+            $table->foreign('produto_id')->references('id')->on('produtos')->onUpdate('cascade');
             $table->integer('quantidade');
             $table->timestamps();
         });

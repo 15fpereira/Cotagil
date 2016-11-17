@@ -18,22 +18,10 @@
   <!-- Descrição da página e Autor -->
   <meta name="description" content="Cotagil - Responsive HTML5 Template">
   <meta name="author" content="iThemesLab">
-
+@include('partials.modals.style-modal')
 @include('partials.css-style')
   <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-  <!-- centraliza o modal na tela -->
-  <style>
-  @media screen and (min-width: 768px) {
-  .modal:before {
-    display: inline-block;
-    vertical-align: middle;
-    content: " ";
-    height: 15%;
-  }
-}
-  </style>
 
 </head>
 
@@ -386,7 +374,7 @@
   <!-- Style Switcher -->
 @include('partials.styleswicher')
 
-  <script type="text/javascript" src="/js/script.js"></script>
+
 
 </body>
 

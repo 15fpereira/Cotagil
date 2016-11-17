@@ -10,15 +10,20 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-Route::get('/pedido/cotacao/create/{idcotacao}',
+
+Route::get('pedido/cotacao/create/{idcotacao}',
     ['as' => 'cotacao.create', 'middleware' => 'auth', 'uses' => 'CotacoesController@create']);
 
-Route::get('pedido/cotacao', 'CotacoesController@index');
-Route::any('cotacao/store/{id}', 'CotacoesController@anyStore');
+//Route::put('/pedido/cotacao/store/{idcotacao}',
+  //  ['as' => 'pedido.cotacao.store', 'middleware' => 'auth', 'uses' => 'CotacoesController@store']);
+
+Route::get('pedido/cotacao',
+    ['as' => 'pedido.cotacao', 'middleware' => 'auth', 'uses' => 'CotacoesController@index']);
+
+Route::any('pedido/cotacao/store/{idcotacao}',
+    ['as' => 'cotacao.store', 'middleware' => 'auth', 'uses' => 'CotacoesController@store']);
 
 //Route::resource('pedido/cotacao','CotacoesController');
-
-
 
 Route::get('/', function () {
     return view('layouts.slide');
@@ -28,7 +33,7 @@ Route::get('perfil/fornecedor', function () {
     return view('user.fornecedor.perfil');
 });
 
-Route::get('/cotacao/{idPedido}',
+Route::get('usuario/cotacao/{idPedido}',
     ['as' => 'usuario.pedido.cotacao', 'middleware' => 'auth', 'uses' => 'HomeController@cotacao']);
 
 Route::get('produto/cotado/{idcotacao}',
@@ -65,10 +70,14 @@ Route::group(['middleware' => 'perfil'], function () {
 
     Route::get('/usuario/pedidos', ['as' => 'usuario.pedidos', 'middleware' => 'auth', 'uses' => 'HomeController@meusPedidos']);
 
-    Route::get('/usuario/pedido-detalhes/{idPedido}', ['as' => 'usuario.pedido.detalhes', 'middleware' => 'auth', 'uses' => 'HomeController@pedidoDetalhes']);
+    Route::get('/usuario/pedido-detalhes/{idPedido}',
+        ['as' => 'usuario.pedido.detalhes', 'middleware' => 'auth', 'uses' => 'HomeController@pedidoDetalhes']);
+    Route::get('/usuario/pedido-cotacao/{idPedido}',
+        ['as' => 'pedito.pedido.cotacao', 'middleware' => 'auth', 'uses' => 'HomeController@pedido']);
 
 
-    Route::get('/usuario/endereco-entrega', ['as' => 'usuario.endereco.entrega', 'middleware' => 'auth', 'uses' => 'HomeController@enderecoEntrega']);
+    Route::get('/usuario/endereco-entrega',
+        ['as' => 'usuario.endereco.entrega', 'middleware' => 'auth', 'uses' => 'HomeController@enderecoEntrega']);
 
 
 });
