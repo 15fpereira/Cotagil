@@ -2,10 +2,7 @@
 
 <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
     {{ csrf_field() }}
-    <div class="controls">
-            <input type="text" placeholder="Name" name="name">
 
-    </div>
     <div class="controls form-group{{ $errors->has('email') ? ' has-error' : '' }}">
         <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 

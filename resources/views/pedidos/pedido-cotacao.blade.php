@@ -17,12 +17,12 @@
 		@foreach($cotacoes as $produto)
 	  	<li class="list-group-item">
 		  	<div class="row">
-		  		<div class="col-md-2">{{ $produto->id }}</div>
+		  		<div class="col-md-2">{{ $produto->produto_id }}</div>
 		  		<div class="col-md-2">{{ $produto->produto->nome }}</div>
 		  		<div class="col-md-2">{{ $produto->produto->descricao }}</div>
 		  		<div class="col-md-2">{{ $produto->quantidade }}</div>
 		  		<div class="col-md-2">
-		  			<a class="btn btn-success" href="/usuario/produto-caracteristicas/{{ $produto->id }}">Cotar</a>
+		  			<a class="btn btn-success" href="/produto/cotado/{{ $produto->id }}">Acompanhar cotação</a>
 		  		</div>
 			</div>
 		</li>

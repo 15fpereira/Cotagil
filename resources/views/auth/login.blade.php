@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.cotagil')
 @section('content')
 <div class="container">
     <div class="row">
@@ -6,7 +6,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
-                    @include('partials.form-login')
+                    @include('partials.form-login-test')
 
                 </div>
             </div>
@@ -14,3 +14,4 @@
     </div>
 </div>
 @endsection
+

@@ -22,7 +22,7 @@
 		  		<div class="col-md-2">{{ $produto->produto->descricao }}</div>
 		  		<div class="col-md-2">{{ $produto->quantidade }}</div>
 		  		<div class="col-md-2">
-		  			<a class="btn btn-success" href="/usuario/produto-caracteristicas/{{ $produto->id }}">Detalhes</a>
+		  			<a class="btn btn-success" href="/usuario/cotacao/{{ $produto->id }}">Detalhes</a>
 		  		</div>
 			</div>
 		</li>

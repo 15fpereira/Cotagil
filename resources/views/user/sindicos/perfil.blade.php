@@ -17,7 +17,7 @@
                 </div>
                 <div class="service-content">
                     <h4>Perfil de usuário:</h4>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor.</p>
+                    <p>Aqui o voçê acessa o seu perfil de usuário, onde poderá modificar dados de seu perfil de usuário.</p>
                 </div>
             </div>
             <!-- End Service Icon 1 -->
@@ -28,8 +28,8 @@
                     <i class="fa fa-eye icon-large-effect icon-effect-1"></i>
                 </div>
                 <div class="service-content">
-                    <h4>Acompanhar cotações:</h4>
-                    <p>Aqui, logo após a solicitação, voçê acompanha as cotações de seus fornecedores.</p>
+                    <h4><a href="{{url('/usuario/pedidos')}}">Acompanhar cotações:</a></h4>
+                    <p>Aqui, logo após a solicitação, voçê acessa os produtos listado e acompanha as cotações de seus fornecedores.</p>
                 </div>
             </div>
             <!-- End Service Icon 2 -->

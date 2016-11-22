@@ -8,9 +8,8 @@ class Cotacao extends Model
 {
 
     public function users(){
-        return $this->belongsToMany('cotagil\User',
-            'cotacao_user')
-            ->withPivot('produto')->withTimestamps();
+        return $this->belongsToMany('cotagil\User')
+            ->withPivot('preco','marca','prazo')->withTimestamps();
     }
 
     public function pedidos()

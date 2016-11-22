@@ -37,10 +37,10 @@
             <div class="slider-content">
               <div class="col-md-12 text-center">
                 <h2 class="animated4">
-									<span><strong></strong> Ficou fácil cotar produto em seu <strong>comdomínio</strong></span>
+									<span><strong></strong>Ola <strong>Síndico!</strong></span>
 								</h2>
                 <h3 class="animated5">
-									<span>The Key of your Success</span>
+									<span>Ficou fácil cotar produto em seu comdomínio</span>
 								</h3>
                 <p class="animated6"><a href="#" class="slider btn btn-system btn-large">Demostração</a></p>
               </div>
@@ -52,13 +52,13 @@
             <div class="slider-content">
               <div class="col-md-12 text-center">
                 <h2 class="animated7 white">
-									<span>Casos de <strong>Sucessos</strong></span>
+									<span>Ola <strong>Fornecedor!</strong></span>
 								</h2>
                 <h3 class="animated8 white">
-									<span>Why you are waiting</span>
+									<span>Aqui vc pode realizar o melhor negócio!</span>
 								</h3>
                 <div class="">
-                  <a class="animated4 slider btn btn-system btn-large btn-min-block" href="#">Get Now</a><a class="animated4 slider btn btn-default btn-min-block" href="#">Live Demo</a>
+                  <a class="animated4 slider btn btn-system btn-large btn-min-block" href="#">Conheça nosso sistema</a><a class="animated4 slider btn btn-default btn-min-block" href="#">Desmostração</a>
                 </div>
               </div>
             </div>
@@ -121,7 +121,7 @@
             </div>
             <div class="service-content">
               <h4>Codominio</h4>
-              <p>Condomínio</p>
+              <p>O sistema cotágil foi desenvolvido para atender todos os condominio em todo o Brasisl, basta solicitar acesso ao sistema.</p>
             </div>
           </div>
           <!-- End Service Icon 3 -->
@@ -133,7 +133,7 @@
             </div>
             <div class="service-content">
               <h4>Acessibilidade</h4>
-              <p>Voçê pode acessar o site em qulquer dispositivo sem instalação de aplicativo, o site é todo responsivo.</p>
+              <p>Voçê pode acessar o site em qulquer dispositivo sem instalação de aplicativo, a nossa plataforma e toda responsivo.</p>
             </div>
           </div>
           <!-- End Service Icon 4 -->
@@ -208,10 +208,10 @@
         <!-- Start Call Action -->
         <div class="call-action call-action-boxed call-action-style2 clearfix">
           <!-- Call Action Button -->
-          <div class="button-side" style="margin-top:4px;"><a href="#" class="btn-system btn-large">Purchase It Now</a></div>
+          <div class="button-side" style="margin-top:4px;"><a href="#" class="btn-system btn-large">Click aqui!</a></div>
           <!-- Call Action Text -->
-          <h2 class="primary"><strong>Margo</strong> is the best theme to create an <strong>awesome website!</strong></h2>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          <h2 class="primary"><strong>Cotágil</strong> sistema de cotação <strong>especifico para condominio!</strong></h2>
+          <p>Conheça o nosso sistema.</p>
         </div>
         <!-- End Call Action -->
 

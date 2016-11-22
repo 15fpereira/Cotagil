@@ -87,12 +87,14 @@ class HomeController extends Controller
     }
     public function produtoCotado(Request $request, $idcotacao)
     {
-       $cotado = $idcotacao;
-        dd($cotado);
-       // dd($user = User::find(\Auth::user()->id)->cotacoes());
-        //$user = User::find(\Auth::user()->id)->cotacoes();
-        $cotado = Cotacao::find($id = $idcotacao);
-        return view('cotacoes.',['cotado'=>$cotado]);
+
+        $cotados = Cotacao::find($idcotacao);
+
+       // dd($cotados->quantidade);
+        //dd($cotados->produto->descricao);
+
+
+        return view('cotacoes.cotado',['cotados'=>$cotados]);
     }
 
     /**

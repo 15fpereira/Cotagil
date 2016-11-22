@@ -175,15 +175,17 @@
           <!-- Start Subscribe & Social Links Widget -->
           <div class="col-md-3">
             <div class="footer-widget mail-subscribe-widget">
-              <h4>Get in touch<span class="head-line"></span></h4>
-              <p>Join our mailing list to stay up to date and get notices about our new releases!</p>
-              <form class="subscribe">
-                <input type="text" placeholder="mail@example.com">
-                <input type="submit" class="btn-system" value="Send">
-              </form>
+              <div class="footer-widget contact-widget">
+                <h4>ENTRAR EM CONTATO<span class="head-line"></span></h4>
+                <ul>
+                  <li><span>Telefone:</span> +55 3221 3996</li>
+                  <li><span>Email:</span> adm@cotagil.com</li>
+                  <li><span>Website:</span> www.cotagil.com.br</li>
+                </ul>
+              </div>
             </div>
             <div class="footer-widget social-widget">
-              <h4>Follow Us<span class="head-line"></span></h4>
+              <h4>SIGA-NOS<span class="head-line"></span></h4>
               <ul class="social-icons">
                 <li>
                   <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
@@ -270,66 +272,11 @@
     </div>
   </div>
 
-          <!-- Start Flickr Widget -->
-          <div class="col-md-3">
-            <div class="footer-widget flickr-widget">
-              <h4>Flicker Feed<span class="head-line"></span></h4>
-              <ul class="flickr-list">
-                <li>
-                  <a href="images/flickr-01.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-01.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-02.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-02.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-03.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-03.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-04.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-04.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-05.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-05.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-06.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-06.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-07.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-07.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-08.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-08.jpg">
-                  </a>
-                </li>
-                <li>
-                  <a href="images/flickr-09.jpg" class="lightbox">
-                    <img alt="" src="images/flickr-09.jpg">
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- .col-md-3 -->
-          <!-- End Flickr Widget -->
           <!-- Start Contact Widget -->
           <div class="col-md-3">
             <div class="footer-widget contact-widget">
               <h4><img src="images/foocotagil.png" class="img-responsive" alt="Footer Logo" /></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+              <p>Sistema web para gerenciar processo de cotação de preços de produtos exclusivamente para condomínios, o sistema e capaz de atender as necessidades de informações, agilidade na contratação de fornecedor, sem vínculo, para realizar compra de produtos com preços mais acessíveis no mercado para os condôminos.</p>
               <ul>
                 <li><span>Telefone:</span> +55 3221 3996</li>
                 <li><span>Email:</span> adm@cotagil.com</li>
@@ -339,16 +286,13 @@
           </div>
           <!-- .col-md-3 -->
           <!-- End Contact Widget -->
-
-
         </div>
         <!-- .row -->
-
         <!-- Start Copyright -->
         <div class="copyright-section">
           <div class="row">
             <div class="col-md-6">
-              <p>&copy; 2016 Cotágil - All Rights Reserved <a href="http://graygrids.com">GrayGrids</a> </p>
+              <p>&copy; 2016 Cotágil -  <a href="http://graygrids.com">GrayGrids</a> </p>
             </div>
             <div class="col-md-6">
               <ul class="footer-nav">

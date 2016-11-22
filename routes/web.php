@@ -69,6 +69,7 @@ Route::group(['middleware' => 'perfil'], function () {
     Route::get('/usuario/perfil/{id}', ['as' => 'usuario.perfil', 'middleware' => 'auth', 'uses' => 'HomeController@userPerfil']);
 
     Route::get('/usuario/pedidos', ['as' => 'usuario.pedidos', 'middleware' => 'auth', 'uses' => 'HomeController@meusPedidos']);
+    Route::get('/usuario/cotacao', ['as' => 'usuario.pedido.cotacao', 'middleware' => 'auth', 'uses' => 'HomeController@cotacao']);
 
     Route::get('/usuario/pedido-detalhes/{idPedido}',
         ['as' => 'usuario.pedido.detalhes', 'middleware' => 'auth', 'uses' => 'HomeController@pedidoDetalhes']);

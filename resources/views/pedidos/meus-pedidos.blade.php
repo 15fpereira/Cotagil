@@ -21,7 +21,7 @@
 
 		  		<div class="col-md-2">{{ $pedido->created_at }}</div>
 		  		<div class="col-md-2">
-		  			<a class="btn btn-success" href="/usuario/pedido-detalhes/{{ $pedido->id }}">Detalhes</a>
+		  			<a class="btn btn-success" href="/usuario/cotacao/{{ $pedido->id }}">Detalhes</a>
 		  		</div>
 			</div>
 		</li>
