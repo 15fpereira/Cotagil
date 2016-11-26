@@ -10,6 +10,8 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+Route::resource('produto','ProdutosController');
+Route::resource('categoria','CategoriasController');
 
 Route::get('pedido/cotacao/create/{idcotacao}',
     ['as' => 'cotacao.create', 'middleware' => 'auth', 'uses' => 'CotacoesController@create']);
@@ -52,7 +54,7 @@ Route::group(['middleware' => 'perfil'], function () {
         return view('user.sindicos.perfil');
     });
 
-    Route::get('/produtos/listagem/{catId?}', ['as' => 'produtos.listagem', 'middleware' => 'auth', 'uses' => 'ProdutosController@index']);
+    Route::get('/produtos/listagem/{catId?}', ['as' => 'produtos.listagem', 'middleware' => 'auth', 'uses' => 'ProdutosController@getIndex']);
 
     Route::get('/produtos/angular/listagem', ['as' => 'produtos.angular.listagem', 'middleware' => 'auth', 'uses' => 'ProdutosController@angular']);
 

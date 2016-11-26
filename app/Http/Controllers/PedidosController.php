@@ -17,6 +17,16 @@ use cotagil\Http\Requests;
 
 class PedidosController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     //
     public function angular()
     {

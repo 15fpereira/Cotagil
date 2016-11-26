@@ -1,5 +1,5 @@
 
-@extends('partials.test')
+@extends('layouts.app-cotagil')
 
 @section('menu-categorias')
     @if(@isset($categorias))
@@ -39,7 +39,7 @@
         <div class="container">
         @if(Session::has('success'))
         <div class="alert alert-success temp">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <a href="#" class="close" data-dismiss="alert" aria-label="close"><i class="fa fa-close"></i></a>
             {{ Session('success') }} 
         </div>
         @endif
@@ -61,6 +61,7 @@
                         <tr>
                             <th>Id</th>
                             <th>Nome</th>
+                            <th>Descrição do produto</th>
                             <th>Adicionar pedido</th>
                         </tr>
                         </thead>
@@ -69,6 +70,7 @@
                         <tr class="gradeA">
                             <td>{{ $produto->id }}</td>
                             <td>{{ $produto->nome }}</td>
+                            <td>{{ $produto->descricao }}</td>
                             <td class="center">
                                <a href="/addcarrinho/{{ $produto->id }}"><i class="fa fa-plus"></i> </a>
                             </td>

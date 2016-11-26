@@ -1,4 +1,4 @@
-@extends('partials.test')
+@extends('layouts.app-cotagil')
 
 @section('content')
 <div id="content">

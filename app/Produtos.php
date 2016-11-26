@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produtos extends Model
 {
+    protected $fillable =
+        [
+        'categoria_id', 'nome', 'descricao'
+        ];
+
 	use Searchable;
 
 	public function searchableAs()

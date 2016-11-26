@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categorias extends Model
 {
+
+    protected $fillable =
+        [
+            'nome'
+        ];
+
+    public $timestamps = false;
+
 	public function getCategorias()
 	{
 		return $this

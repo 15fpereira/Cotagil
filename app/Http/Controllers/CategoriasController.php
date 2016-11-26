@@ -2,51 +2,13 @@
 
 namespace cotagil\Http\Controllers;
 
-use cotagil\Produtos;
-
+use cotagil\Categorias;
 use Illuminate\Http\Request;
 
 use cotagil\Http\Requests;
 
-use cotagil\Categorias;
-
-use cotagil\Produtos as ProdutosModel;
-use cotagil\Pedido as PedidosModel;
-use cotagil\PedidoDetalhes as PedidoDetalhesModel;
-use Illuminate\Support\Facades\Redis;
-use Illuminate\Support\Facades\Auth;
-
-class ProdutosController extends Controller
+class CategoriasController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    public function getIndex(Request $request, $catId = null)
-    {
-        $search = $request->get('search', "");
-        if ("" !== $search) {
-            $produtos = ProdutosModel::search($search)->paginate(12);
-        } else if (null !== $catId) {
-            $produtos =
-                ProdutosModel::where(
-                    'categoria_id', $catId
-                )
-                    ->paginate(12);
-        } else {
-            $produtos = ProdutosModel::paginate(12);
-        }
-        //inner join que esta na model Categorias
-        $categorias = (new Categorias)->getCategorias();
-        return view('produtos.listagem', ['produtos' => $produtos, 'categorias' => $categorias, 'search' => $search]);
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -54,8 +16,8 @@ class ProdutosController extends Controller
      */
     public function index()
     {
-        $produtos = Produtos::all();
-        return view('produtos.index', compact('produtos'));
+        $categorias = Categorias::all();
+        return view('categorias.index', compact('categorias'));
     }
 
     /**
@@ -65,7 +27,7 @@ class ProdutosController extends Controller
      */
     public function create()
     {
-        return view('produtos.create');
+        return view('categorias.create');
     }
 
     /**
@@ -77,8 +39,8 @@ class ProdutosController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        Produtos::create($data);
-        return redirect()->route('produto.index');
+        Categorias::create($data);
+        return redirect()->route('categoria.index');
     }
 
     /**
