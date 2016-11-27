@@ -1,4 +1,3 @@
-
 @extends('layouts.app-cotagil')
 @section('content')
 <div class="container">
@@ -20,7 +19,7 @@
                     <div class="controls form-group{{ $errors->has('categoria_id') ? ' has-error' : '' }}">
                         <div class="form-group">
                             <select name="categoria_id" id="categoria_id" class="email" type="text" required="required" value="{{ old('categoria_id') }}" autofocus placeholder="Categoria:" >
-                                <option value="0">Selecione</option>
+                                <option value="0">Selecione uma categoria</option>
                                 @foreach(cotagil\Categorias::all() as $key)
                                     <option value="{{$key->id}}">{{$key->nome}}</option>
                                 @endforeach

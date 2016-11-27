@@ -15,7 +15,7 @@
                             <th>Marca</th>
                             <th>Prazo(s)</th>
                             <th>Data/Cotação</th>
-                            <th>Ações</th>
+                            <th>Status</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -26,12 +26,25 @@
                                 <td>{{$cotacoe->pivot->preco}} R$</td>
                                 <td>{{$cotacoe->pivot->marca}}</td>
                                 <td>{{$cotacoe->pivot->prazo}}</td>
-                                <td>{{$cotacoe->pivot->created_at}}</td>
-                                <td class="center">
-                                    <div class="button-side">
-                                        <a href="#" class="btn-system border-btn btn-large"><i class="fa fa-trash" aria-hidden="true"></i> Recusar</a>
-                                        <a href="#" class="btn-system border-btn btn-large btn-gray"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Comprar</a>
-                                    </div>
+                                <td>
+                                    <?php
+                                    /*
+                                        $data = explode(' ', $cotacoe->pivot->created_at);
+                                        $d = explode('-', $data[0]);
+                                        echo $d[2]."/".$d[1]."/".$d[0]." ".$data[1];*/
+                                    ?>    
+                                    {{$cotacoe->pivot->created_at}}
+                                </td>
+                                <td>
+                                    @if ($cotacoe->pivot->status == 0) 
+                                        Recusado
+                                    @else
+                                        @if ($cotacoe->pivot->status == 1)
+                                            Em cotação
+                                        @else 
+                                            Comprado
+                                        @endif
+                                    @endif 
                                 </td>
                             </tr>
                         @endforeach

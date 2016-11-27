@@ -19,6 +19,7 @@ class CreatePedidosTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
             //$table->integer('endereco_id');
             $table->integer('qtd_itens');
+            $table->integer('status');
             //$table->float('valor_total', 10, 2);
             $table->timestamps();
         });

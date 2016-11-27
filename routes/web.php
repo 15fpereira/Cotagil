@@ -54,6 +54,12 @@ Route::group(['middleware' => 'perfil'], function () {
         return view('user.sindicos.perfil');
     });
 
+    Route::get('usuario/recusar/{id}',
+        ['as' => 'usuario.recusar', 'middleware' => 'auth', 'uses' => 'CotacoesController@recusar']);
+    
+    Route::get('usuario/comprar/{id}',
+        ['as' => 'usuario.comprar', 'middleware' => 'auth', 'uses' => 'CotacoesController@comprar']);
+    
     Route::get('/produtos/listagem/{catId?}', ['as' => 'produtos.listagem', 'middleware' => 'auth', 'uses' => 'ProdutosController@getIndex']);
 
     Route::get('/produtos/angular/listagem', ['as' => 'produtos.angular.listagem', 'middleware' => 'auth', 'uses' => 'ProdutosController@angular']);

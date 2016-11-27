@@ -15,6 +15,7 @@
                             <th>QUANT</th>
                             <th>VALOR TOTAL</th>
                             <th>DATA/COTAÇÃO</th>
+                            <th>STATUS</th>
                             <th>AÇÕES</th>
                         </tr>
                         </thead>
@@ -27,11 +28,23 @@
                                 <td>{{$cotados->quantidade}}</td>
                                 <td>{{$user->pivot->preco*$cotados->quantidade}} R$</td>
                                 <td>{{$user->pivot->created_at}}</td>
+                                <td>
+                                    @if ($user->pivot->status == 0) 
+                                        Recusado
+                                    @else
+                                        @if ($user->pivot->status == 1)
+                                            Em cotação
+                                        @else 
+                                            Comprado
+                                        @endif
+                                    @endif
                                 <td class="center">
-                                    <div class="button-side">
-                                        <a href="#" class="btn-system border-btn btn-large"><i class="fa fa-trash" aria-hidden="true"></i> Recusar</a>
-                                        <a href="#" class="btn-system border-btn btn-large btn-gray"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Comprar</a>
-                                    </div>
+                                    @if ($user->pivot->status == 1)
+                                        <div class="button-side">
+                                            <a href="/usuario/recusar/{{$user->pivot->id}}" class="btn-system border-btn btn-large"><i class="fa fa-trash" aria-hidden="true"></i> Recusar</a>
+                                            <a href="/usuario/comprar/{{$user->pivot->id}}" class="btn-system border-btn btn-large btn-gray"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Comprar</a>
+                                        </div>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach

@@ -2,7 +2,7 @@
 @extends('layouts.app-cotagil')
 @section('content')
     <div class="container">
-        <h2 class="classic-title"><span>Cadastro de produtos</span></h2>
+        <h2 class="classic-title"><span>Cadastro de categorias de produtos</span></h2>
         <div class="row sidebar-page">
             <div class="col-md-8 page-content">
 

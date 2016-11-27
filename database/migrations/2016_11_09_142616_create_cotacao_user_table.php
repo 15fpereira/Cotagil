@@ -21,6 +21,7 @@ class CreateCotacaoUserTable extends Migration
             $table->float('preco', 8, 2);
             $table->string('marca');
             $table->integer('prazo');
+            $table->integer('status');
             //$table->float('valor_total', 10, 2);
 
             $table->timestamps();

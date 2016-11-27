@@ -55,7 +55,7 @@ class ProdutosController extends Controller
     public function index()
     {
         $produtos = Produtos::all();
-        return view('produtos.index', compact('produtos'));
+        return view('produto.index', compact('produtos'));
     }
 
     /**
@@ -65,7 +65,7 @@ class ProdutosController extends Controller
      */
     public function create()
     {
-        return view('produtos.create');
+        return view('produto.create');
     }
 
     /**
@@ -78,7 +78,7 @@ class ProdutosController extends Controller
     {
         $data = $request->all();
         Produtos::create($data);
-        return redirect()->route('produto.index');
+        return view('produto.index');
     }
 
     /**

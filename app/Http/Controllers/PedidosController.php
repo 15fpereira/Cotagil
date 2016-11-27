@@ -73,6 +73,8 @@ class PedidosController extends Controller
         $pedido->user_id = Auth::id();
         //$pedido->endereco_id = $idEndereco;
         $pedido->qtd_itens = count($carrinho);
+        //status 1 (aberto) e 2 (finalizado)
+        $pedido->status = 1;
         $ped = $pedido->save();
 
 //grava detalhes do pedido
@@ -100,6 +102,6 @@ class PedidosController extends Controller
 
         $request->session()->forget('carrinho');
         $request->session()->flash('success', 'Solicitação de cotação efetuada com sucesso!');
-        return redirect('produtos/listagem');
+        return redirect('/usuario/pedidos');
     }
 }

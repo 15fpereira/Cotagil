@@ -36,6 +36,6 @@ class User extends Authenticatable
     public function cotacoes()
     {
         return $this->belongsToMany('cotagil\Cotacao')
-            ->withPivot('preco','marca','prazo')->withTimestamps();
+            ->withPivot('id','preco','marca','prazo','status')->withTimestamps();
     }
 }
