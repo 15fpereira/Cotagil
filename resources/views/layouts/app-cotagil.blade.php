@@ -102,7 +102,17 @@
 						</li>
 						<li> <a href="#"><i class="fa fa-user"></i> {{Auth::user()->name}}</a>
 							<ul class="dropdown">
-								<li><a href="{{url('/logout')}}">Sair</a></li>
+								<li>
+                                    <a href="{{ url('/logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Sair
+                                    </a>
+
+                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
 								<li><a href="#">Perfil</a></li>
 							</ul>
 						</li>
@@ -180,157 +190,103 @@
 				<!-- Start Subscribe & Social Links Widget -->
 				<div class="col-md-3">
 					<div class="footer-widget mail-subscribe-widget">
-						<h4>Get in touch<span class="head-line"></span></h4>
-						<p>Join our mailing list to stay up to date and get notices about our new releases!</p>
-						<form class="subscribe">
-							<input type="text" placeholder="mail@example.com">
-							<input type="submit" class="btn-system" value="Send">
-						</form>
+						<div class="footer-widget contact-widget">
+							<h4>ENTRAR EM CONTATO<span class="head-line"></span></h4>
+							<ul>
+								<li><span>Telefone:</span> +55 3221 3996</li>
+								<li><span>Email:</span> adm@cotagil.com</li>
+								<li><span>Website:</span> www.cotagil.com.br</li>
+							</ul>
+						</div>
 					</div>
-					<div class="footer-widget social-widget">
-						<h4>Follow Us<span class="head-line"></span></h4>
-						<ul class="social-icons">
-							<li>
-								<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-							</li>
-							<li>
-								<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-							</li>
-							<li>
-								<a class="google" href="#"><i class="fa fa-google-plus"></i></a>
-							</li>
-							<li>
-								<a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
-							</li>
-							<li>
-								<a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
-							</li>
-							<li>
-								<a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
-							</li>
-							<li>
-								<a class="tumblr" href="#"><i class="fa fa-tumblr"></i></a>
-							</li>
-							<li>
-								<a class="instgram" href="#"><i class="fa fa-instagram"></i></a>
-							</li>
-							<li>
-								<a class="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
-							</li>
-							<li>
-								<a class="skype" href="#"><i class="fa fa-skype"></i></a>
-							</li>
-						</ul>
-					</div>
+
 				</div>
 				<!-- .col-md-3 -->
 				<!-- End Subscribe & Social Links Widget -->
 
-
 				<!-- Start Twitter Widget -->
 				<div class="col-md-3">
 					<div class="footer-widget twitter-widget">
-						<h4>Twitter Feed<span class="head-line"></span></h4>
+						<h4>Usuário logado no sistema<span class="head-line"></span></h4>
 						<ul>
-							<li>
-								<p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.</p>
-								<span>28 February 2014</span>
-							</li>
-							<li>
-								<p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.An Fusce eleifend aliquet nis application.</p>
-								<span>26 February 2014</span>
-							</li>
-							<li>
-								<p><a href="#">@GrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.</p>
-								<span>28 February 2014</span>
-							</li>
+
+							@if (Auth::guest())
+								<li>
+									<p>Não há um<a href="">conta </a> logado no sistema.</p>
+									<span>28 February 2014</span>
+								</li>
+								<li><a href="{{ url('/login') }}">Login</a><p> Click em login para entra no sistema</p></li>
+								<li><a href="{{ url('/register') }}">Registro</a> <p> link de registro provisório!</p></li>
+							@else
+								<li>
+									<p>Voçê está logado com a seguinte conta.</p>
+									<p><a href="{{url('/home')}}">Nome: </a> {{ Auth::user()->name }}</p>
+									<p><a href="{{url('/home')}}">Email: </a> {{ Auth::user()->email }}</p>
+									<span>Click aqui para fazer <a href="#"> logouf!</a></span>
+								</li>
+
+							@endif
+
 						</ul>
 					</div>
 				</div>
 				<!-- .col-md-3 -->
 				<!-- End Twitter Widget -->
 
-				<!-- Start Flickr Widget -->
-				<div class="col-md-3">
-					<div class="footer-widget flickr-widget">
-						<h4>Flicker Feed<span class="head-line"></span></h4>
-						<ul class="flickr-list">
-							<li>
-								<a href="/images/flickr-01.jpg" class="lightbox">
-									<img alt="" src="/images/flickr-01.jpg">
-								</a>
-							</li>
-							<li>
-								<a href="/images/flickr-02.jpg" class="lightbox">
-									<img alt="" src="/images/flickr-02.jpg">
-								</a>
-							</li>
-							<li>
-								<a href="/images/flickr-03.jpg" class="lightbox">
-									<img alt="" src="/images/flickr-03.jpg">
-								</a>
-							</li>
-							<li>
-								<a href="/images/flickr-04.jpg" class="lightbox">
-									<img alt="" src="/images/flickr-04.jpg">
-								</a>
-							</li>
-							<li>
-								<a href="/images/flickr-05.jpg" class="lightbox">
-									<img alt="" src="/images/flickr-05.jpg">
-								</a>
-							</li>
-							<li>
-								<a href="/images/flickr-06.jpg" class="lightbox">
-									<img alt="" src="/images/flickr-06.jpg">
-								</a>
-							</li>
-							<li>
-								<a href="/images/flickr-07.jpg" class="lightbox">
-									<img alt="" src="/images/flickr-07.jpg">
-								</a>
-							</li>
-							<li>
-								<a href="/images/flickr-08.jpg" class="lightbox">
-									<img alt="" src="/images/flickr-08.jpg">
-								</a>
-							</li>
-							<li>
-								<a href="/images/flickr-09.jpg" class="lightbox">
-									<img alt="" src="/images/flickr-09.jpg">
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!-- .col-md-3 -->
-				<!-- End Flickr Widget -->
-
-
 				<!-- Start Contact Widget -->
 				<div class="col-md-3">
 					<div class="footer-widget contact-widget">
 						<h4><img src="/images/foocotagil.png" class="img-responsive" alt="Footer Logo" /></h4>
-						<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-						<ul>
-							<li><span>Phone Number:</span> +01 234 567 890</li>
-							<li><span>Email:</span>{{ Auth::user()->email }}</li>
-							<li><span>Website:</span> www.yourdomain.com</li>
-						</ul>
+						<p align="justify">Sistema web para gerenciar processo de cotação de preços de produtos exclusivamente para condomínios.
+							<!--, o sistema e capaz de atender as necessidades de informações, agilidade na contratação de fornecedor, sem vínculo,
+							para realizar compra de produtos com preços mais acessíveis no mercado para os condôminos.--></p>
 					</div>
+				</div>
+				<!-- Start Contact Widget -->
+				<div class="footer-widget social-widget">
+					<h4>SIGA-NOS<span class="head-line"></span></h4>
+					<ul class="social-icons">
+						<li>
+							<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+						</li>
+						<li>
+							<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+						</li>
+						<li>
+							<a class="google" href="#"><i class="fa fa-google-plus"></i></a>
+						</li>
+						<li>
+							<a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+						</li>
+						<li>
+							<a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
+						</li>
+						<li>
+							<a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
+						</li>
+						<li>
+							<a class="tumblr" href="#"><i class="fa fa-tumblr"></i></a>
+						</li>
+						<li>
+							<a class="instgram" href="#"><i class="fa fa-instagram"></i></a>
+						</li>
+						<li>
+							<a class="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
+						</li>
+						<li>
+							<a class="skype" href="#"><i class="fa fa-skype"></i></a>
+						</li>
+					</ul>
 				</div>
 				<!-- .col-md-3 -->
 				<!-- End Contact Widget -->
-
-
 			</div>
 			<!-- .row -->
-
 			<!-- Start Copyright -->
 			<div class="copyright-section">
 				<div class="row">
 					<div class="col-md-6">
-						<p>&copy; 2014 Margo - All Rights Reserved</p>
+						<p>&copy; 2016 Cotágil -  <a href="http://graygrids.com">GrayGrids</a> </p>
 					</div>
 					<div class="col-md-6">
 						<ul class="footer-nav">
@@ -342,7 +298,6 @@
 				</div>
 			</div>
 			<!-- End Copyright -->
-
 		</div>
 	</footer>
 	<!-- End Footer -->

@@ -18,12 +18,18 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->enum('perfil', ['0', '1', '2', '3']);
+            $table->integer('perfil');
+            $table->string('documento');
+            $table->string('condominio');
+            $table->string('nomefantazia');
+            $table->string('telefone');
+
             $table->rememberToken();
             $table->timestamps();
         });
     }
-
+    //nome do banco antigo
+//e-commerce-master
     /**
      * Reverse the migrations.
      *

@@ -31,8 +31,9 @@ class CotacoesController extends Controller
     }
 
     public function index(){
-        $cotacoes = Cotacao::all();
-        return view('cotacoes.index', compact('cotacoes'));
+       $cotacoes = Cotacao::all();
+        dd($cotacoes);
+        //return view('cotacoes.index', compact('cotacoes'));
     }
 
     public function edit($id){
@@ -65,7 +66,7 @@ class CotacoesController extends Controller
             'status' => 1
         ]);
 
-        return redirect()->route('cotacao');
+        return redirect()->route('pedido.cotacao');
     }
 
     public function recusar(Request $request, $id) 

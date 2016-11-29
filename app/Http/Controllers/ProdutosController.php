@@ -55,7 +55,7 @@ class ProdutosController extends Controller
     public function index()
     {
         $produtos = Produtos::all();
-        return view('produto.index', compact('produtos'));
+        return view('produtos.index', compact('produtos'));
     }
 
     /**
@@ -65,7 +65,7 @@ class ProdutosController extends Controller
      */
     public function create()
     {
-        return view('produto.create');
+        return view('produtos.create');
     }
 
     /**

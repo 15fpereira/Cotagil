@@ -1,5 +1,7 @@
-
+@extends('layouts.app-cotagil')
+@section('content')
     <div class="container">
+        <h2 class="classic-title"><span>Realize a sua cotação</span></h2>
         <div class="row">
             <div class="col-md-8">
                 <!-- Start Contact Form -->
@@ -41,10 +43,14 @@
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">
-                            Confirmar
-                        </button>
 
+                        <button type="submit" class="btn-system border-btn btn-large">
+                            <i class="fa fa-check-square-o" aria-hidden="true"></i> Confirmar
+                        </button>
+                        <button type="reset" class="btn-system border-btn btn-large btn-gray">
+                            <i class="fa fa-times" aria-hidden="true"></i> Limpar dados
+
+                        </button>
                     </div>
                 </form>
                 <!-- End Contact Form -->
@@ -52,3 +58,4 @@
         </div>
     </div>
 <!-- End content -->
+@endsection

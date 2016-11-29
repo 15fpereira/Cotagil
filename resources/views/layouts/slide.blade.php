@@ -1,4 +1,4 @@
-@extends('layouts.cotagil')
+@extends('layouts.home-cotagil')
 
 @section('content')
 <!-- Start HomePage Slider -->
