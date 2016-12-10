@@ -78,7 +78,7 @@ class ProdutosController extends Controller
     {
         $data = $request->all();
         Produtos::create($data);
-        return view('produto.index');
+        return view('produtos.index');
     }
 
     /**

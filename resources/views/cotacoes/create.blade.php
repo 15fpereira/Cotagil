@@ -1,9 +1,9 @@
-@extends('layouts.app-cotagil')
+@extends('partials.home_fornecedor')
 @section('content')
     <div class="container">
         <h2 class="classic-title"><span>Realize a sua cotação</span></h2>
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <!-- Start Contact Form -->
 
                 <form class="contact-form" id="contact-form" role="form" method="POST" action="{{url('pedido/cotacao/store',$cotacao)}}">
@@ -32,7 +32,7 @@
                     </div>
                     <div class="controls form-group{{ $errors->has('prazo') ? ' has-error' : '' }}">
                         <div class="form-group">
-                            <input id="prazo" type="text" name="prazo" value="{{ old('prazo') }}" autofocus placeholder="Prazo de entrega:">
+                            <input id="prazo" type="text" name="prazo" value="{{ old('prazo') }}" autofocus placeholder="Quantidade de dias para entregar:">
 
                             @if ($errors->has('prazo'))
                                 <span class="help-block">

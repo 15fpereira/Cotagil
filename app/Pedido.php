@@ -15,4 +15,9 @@ class Pedido extends Model
     {
         return $this->hasMany('cotagil\Cotacao');
     }
+
+    public function user()
+    {
+        return $this->belongsTo('cotagil\User');
+    }
 }

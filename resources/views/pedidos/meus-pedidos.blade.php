@@ -1,4 +1,4 @@
-@extends('partials.test')
+@extends('layouts.app-cotagil')
 
 @section('content')
 <div class="container">
@@ -22,9 +22,9 @@
 				  		<div class="col-md-3">{{ $pedido->id }}</div>
 				  		<div class="col-md-3">{{ $pedido->qtd_itens }}</div>
 				  		<div class="col-md-2">{{ $pedido->created_at }}</div>
-				  		<div class="col-md-2">Finalizado</div>
+				  		<div class="col-md-2">Em andamento</div>
 				  		<div class="col-md-2">
-				  			<a class="btn btn-success" href="/usuario/cotacao/{{ $pedido->id }}">Detalhes</a>
+				  			<a class="btn-system btn-small border-btn btn-gray" href="/usuario/cotacao/{{ $pedido->id }}">Detalhes</a>
 				  		</div>
 					</div>
 				</li>
@@ -57,7 +57,7 @@
 				  		<div class="col-md-2">{{ $pedido->created_at }}</div>
 				  		<div class="col-md-2">Finalizado</div>
 				  		<div class="col-md-2">
-				  			<a class="btn btn-success" href="/usuario/cotacao/{{ $pedido->id }}">Detalhes</a>
+				  			<a class="btn-system btn-small border-btn btn-gray" href="/usuario/cotacao/{{ $pedido->id }}">Detalhes</a>
 				  		</div>
 					</div>
 				</li>

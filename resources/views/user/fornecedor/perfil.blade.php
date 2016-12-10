@@ -7,7 +7,7 @@
             <h2 class="classic-title"><span>Perfil <strong>Fornecedor</strong></span></h2>
         </div>
         <!-- Divider -->
-        <div class="hr5" style="margin-top:25px; margin-bottom:55px;"></div>
+        <div class="hr1" style="margin-bottom:40px;"></div>
         <!-- Start Services Icons -->
         <div class="row">
             <!-- Start Service Icon 1 -->

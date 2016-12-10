@@ -93,9 +93,17 @@
 						<li>
 							<a href="{{ url('produtos/carrinho') }}"><span class="badge" >{{ count(Session('carrinho')) }} itens</span></a>
 						</li>
+						<li> <a href="#">Serviços</a>
+							<ul class="dropdown">
+								<li><a href="{{url('/usuario/pedidos')}}">Minhas solicitações de cotação</a>
+								</li>
+								<li><a href="{{url('/categoria/create')}}">Categoria do produto</a>
+							</ul>
+						</li>
+
 						<li> <a href="#">Cadastro</a>
 							<ul class="dropdown">
-								<li><a href="{{url('/produto/create')}}">Produto</a>
+								<li><a href="{{url('/produtos/create')}}">Produto</a>
 								</li>
 								<li><a href="{{url('/categoria/create')}}">Categoria do produto</a>
 							</ul>
@@ -113,7 +121,7 @@
                                         {{ csrf_field() }}
                                     </form>
                                 </li>
-								<li><a href="#">Perfil</a></li>
+								<li><a href="/usuario/perfil/{{ Auth::id() }}">Perfil</a></li>
 							</ul>
 						</li>
 

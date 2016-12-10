@@ -7,7 +7,7 @@
 
 
                 <!-- Start Contact Form -->
-                <form class="contact-form" id="contact-form" role="form" method="POST" action="{{route('produto.store')}}">
+                <form class="contact-form" id="contact-form" role="form" method="POST" action="{{route('produtos.store')}}">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <!-- Categoria -->

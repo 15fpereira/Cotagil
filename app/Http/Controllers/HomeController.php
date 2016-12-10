@@ -64,7 +64,8 @@ class HomeController extends Controller
      */
     public function pedidoDetalhes(Request $request, $idPedido)
     {
-        $pedidoDetalhes = PedidoDetalhes::where('pedido_id', $idPedido)->paginate(4);
+        $pedidoDetalhes = PedidoDetalhes::where('pedido_id', $idPedido);//->paginate(4);
+        dd($pedidoDetalhes);
 
         return view('pedidos.pedido-detalhes', ['pedidoDetalhes' => $pedidoDetalhes]);
     }

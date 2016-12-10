@@ -90,7 +90,7 @@
                         </li>
                         <li> <a href="#">Serviço</a>
                             <ul class="dropdown">
-                                <li><a href="{{url('/pedido/cotacao')}}">Cotar produto</a>
+                                <li><a href="{{url('/servico/solicitacao/cotacao')}}">Cotar produto</a>
                                 </li>
                                 <li><a href="{{url('/minha-cotacao')}}">Minhas cotações</a>
                             </ul>
@@ -103,7 +103,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         Sair
                                     </a>
-                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ url('logout') }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}
                                     </form>
                                 </li>

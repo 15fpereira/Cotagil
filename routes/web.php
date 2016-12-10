@@ -13,13 +13,17 @@
 Route::resource('produto','ProdutosController');
 Route::resource('categoria','CategoriasController');
 
+Route::get('servico/solicitacao/cotacao',
+    ['as' => 'cotacao.solicitao', 'middleware' => 'auth', 'uses' => 'CotacoesController@solicitacaoCotacao']);
+
+
 Route::get('pedido/cotacao/create/{idcotacao}',
     ['as' => 'cotacao.create', 'middleware' => 'auth', 'uses' => 'CotacoesController@create']);
 
 //Route::put('/pedido/cotacao/store/{idcotacao}',
   //  ['as' => 'pedido.cotacao.store', 'middleware' => 'auth', 'uses' => 'CotacoesController@store']);
 
-Route::get('pedido/cotacao',
+Route::get('pedido/cotacao/{idpedido}',
     ['as' => 'pedido.cotacao', 'middleware' => 'auth', 'uses' => 'CotacoesController@index']);
 
 Route::any('pedido/cotacao/store/{idcotacao}',

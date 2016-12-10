@@ -1,4 +1,4 @@
-@extends('app')
+@extends('layouts.app-cotagil')
 
 @section('content')
 <div class="container-fluid">

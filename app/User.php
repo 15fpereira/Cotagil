@@ -16,8 +16,20 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email',
+        'perfil', 'condominio',
+        'nomefantazia',
+        //'documento',
+
+        //'telefone',
+        'password',
     ];
+
+//'perfil' => $data['perfil'],
+//'documento' => $data['documento'],
+//'condominio' => $data['condominio'],
+//'telefone' => $data['telefone'],
+//'password' => bcrypt($data['password']),
 
     /**
      * The attributes that should be hidden for arrays.
@@ -31,6 +43,10 @@ class User extends Authenticatable
     public function enderecos()
     {
         return $this->hasMany('cotagil\Enderecos');
+    }
+    public function pedidos()
+    {
+        return $this->hasMany('cotagil\Pedido');
     }
 
     public function cotacoes()

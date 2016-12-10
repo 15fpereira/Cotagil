@@ -1,13 +1,16 @@
 @extends('layouts.app-cotagil')
 
 @section('content')
-<div id="content">
     <div class="container">
+        <!-- Divider -->
+        <div class="hr1" style="margin-bottom:10px;"></div>
         <div class="row">
             <h2 class="classic-title"><span>Perfil <strong>Síndico</strong></span></h2>
         </div>
+
         <!-- Divider -->
-        <div class="hr5" style="margin-top:25px; margin-bottom:55px;"></div>
+        <div class="hr1" style="margin-bottom:30px;"></div>
+
         <!-- Start Services Icons -->
         <div class="row">
             <!-- Start Service Icon 1 -->
@@ -37,11 +40,11 @@
             <!-- Start Service Icon 3 -->
             <div class="col-md-3 col-sm-6 service-box service-center">
                 <div class="service-icon">
-                    <i class="fa fa-pencil icon-large-effect icon-effect-1"></i>
+                    <i class="fa fa-usd icon-large-effect icon-effect-1"></i>
                 </div>
                 <div class="service-content">
-                    <h4>Clean Modern Code</h4>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor.</p>
+                    <h4>Solicitar cotação</h4>
+                    <p align="justify">Caro sindico aqui voçê poderar realizar a sua solicitação de cotação de forma rapida. Adicione os produtos desejado em seu pedido e finalize o pedido, depois é só aguarda seus fornecedores realizar as cotações.</p>
                 </div>
             </div>
             <!-- End Service Icon 3 -->
@@ -53,7 +56,7 @@
                 </div>
                 <div class="service-content">
                     <h4>Meus pedidos</h4>
-                    <p>Aqui voçê acessa as ultimas listas de pedidos.</p>
+                    <p align="justify">Aqui voçê acessa as ultimas listas de pedidos e os itens adicionado no pedido, onde voçê poderá excluir tanto pedito quanto os itens do pedido.</p>
                 </div>
             </div>
             <!-- End Service Icon 4 -->
@@ -104,6 +107,5 @@
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
         </div>
         <!-- End Call Action -->
-    </div>
 </div>
     @endsection

@@ -52,7 +52,8 @@
 @else
 	   <div class="row"> 
                 	<div class="col-sm-10 col-md-10" >
-               			<h2>Não há itens adicionado!!! Clique <a href="{{ '/condominio.novacompra' }}">aqui</a> para adicionar...</h2>
+               			<h2>Não há itens adicionado!!! Clique
+                            <a href="{{ '/condominio.novacompra' }}">aqui</a> para adicionar...</h2>
 
                 	</div>
                </div>

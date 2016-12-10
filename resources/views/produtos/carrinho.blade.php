@@ -1,4 +1,4 @@
-@extends('partials.test')
+@extends('layouts.app-cotagil')
 @section('content')
 <div class="row-fluid carrinho">
     <div class="container" style="margin-top: 64px;">
@@ -47,9 +47,7 @@
 
                 <div class="pull-right ajusta-responsivo" style="width:100%;">
                     <a class="btn btn-primary" href="{{ url('produtos/listagem') }}">Continuar Comprando</a>
-                    <a class="btn btn-primary" data-toggle="modal" href="#addprodutos"><i class="fa fa-plus"></i>Continuar Comprando modal</a>
-
-                    <a class="btn btn-danger right" href="{{ url('/produtos/checkout') }}">Fechar Pedido</a>
+                     <a class="btn btn-danger right" href="{{ url('/produtos/checkout') }}">Fechar Pedido</a>
                 </div>
             </div>
         </div>

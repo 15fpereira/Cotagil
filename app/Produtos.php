@@ -22,11 +22,11 @@ class Produtos extends Model
 
     public function categoria()
     {
-    	$this->belongsTo('cotagil\Categorias');
+    	return $this->belongsTo('cotagil\Categorias');
     }
 
     public function cotacao()
     {
-    	$this->hasMany('cotagil\Cotacao');
+    	return $this->hasMany('cotagil\Cotacao');
     }
 }

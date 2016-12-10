@@ -9,10 +9,10 @@ class Cotacao extends Model
 
     public function users(){
         return $this->belongsToMany('cotagil\User')
-            ->withPivot('id', 'preco','marca','prazo', 'status')->withTimestamps();
+            ->withPivot('id', 'preco', 'marca', 'prazo', 'status')->withTimestamps();
     }
 
-    public function pedidos()
+    public function pedido()
     {
         return $this->belongsTo('cotagil\Pedido');
 

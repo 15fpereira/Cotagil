@@ -4,6 +4,7 @@ namespace cotagil\Http\Controllers;
 
 use cotagil\Cotacao;
 
+use cotagil\Pedido;
 use cotagil\User;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
@@ -29,11 +30,26 @@ class CotacoesController extends Controller
     {
         $this->middleware('auth');
     }
+    public function solicitacaoCotacao()
+    {
 
-    public function index(){
-       $cotacoes = Cotacao::all();
-        dd($cotacoes);
-        //return view('cotacoes.index', compact('cotacoes'));
+        $pedidos = Pedido::all();
+
+        {
+            return view('cotacoes.solicitacao-cotacao', ['pedidos'=>$pedidos]);
+        }
+    }
+
+
+    public function index(Request $request, $idpedido){
+        //dd($idpedido);
+       $cotacoes = Cotacao::where('pedido_id',$idpedido)->paginate(4);
+
+
+            return view('cotacoes.index',['cotacoes' => $cotacoes]);
+        //$pedidoDetalhes = PedidoDetalhes::where('pedido_id', $idPedido)->paginate(4);
+
+
     }
 
     public function edit($id){
@@ -66,7 +82,12 @@ class CotacoesController extends Controller
             'status' => 1
         ]);
 
-        return redirect()->route('pedido.cotacao');
+        $cotacaos = Cotacao::find($idcotacao);
+
+        return redirect()->action(
+            'CotacoesController@index', ['id' => $cotacaos->pedido_id]
+        );
+
     }
 
     public function recusar(Request $request, $id) 
@@ -98,12 +119,16 @@ class CotacoesController extends Controller
 
         //consulta para retornar as informações da tablea "pedidos"
         $pedido = DB::select('select * from cotacaos, pedidos where pedidos.id = cotacaos.pedido_id and cotacaos.id = ?', [$id_cotacao]);
+        //$pedido = Cotacao::all($id_cotacao);
         //transforma o resultado do select em variaveis
         foreach ($pedido as $p) :
             $id_pedido     = $p->pedido_id;
             $qtd_itens     = $p->qtd_itens;
             $qtd_comprados = $p->qtd_comprados;
         endforeach;
+        //enviar email
+        // caro fornecedor, vc ganhou a cotação do item X do pedido X
+
         //incrementa o campo qtd_comprados, sinalizando que mais um item do pedido foi comprado
         DB::table('pedidos')
             ->where('id', $id_pedido)
